@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>cacctmgr 管理用户/账户信息 - CraneSched</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "cacctmgr \u7ba1\u7406\u7528\u6237/\u8d26\u6237\u4fe1\u606f";
+        var mkdocs_page_input_path = "command/cacctmgr.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> CraneSched
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用 CraneSched 文档</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">cacctmgr 管理用户/账户信息</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 添加账户</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">主要参数</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2. 添加用户</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">主要参数</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3">3. 删除用户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4">4. 删除账户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5">5. 查找用户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6">6. 查找账户</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7">7. 修改账户</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">主要参数</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8">8. 修改用户</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">主要参数</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9">9. 显示账户树</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10">10. 显示用户</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cbatch/">cbatch 提交批处理作业</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ccancel/">ccancel 取消作业</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ccontrol/">ccontrol 查看分区和节点状态</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cinfo/">cinfo 查看节点与分区状态</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cqueue/">cqueue 查看作业队列</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Config</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../config/Centos7Configuration/">centos7 Crane环境配置</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CraneSched</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Command</li>
+      <li class="breadcrumb-item active">cacctmgr 管理用户/账户信息</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cacctmgr">cacctmgr 管理用户/账户信息</h1>
+<p><strong>cacctmgr 可以管理账户/用户信息，包括添加账户/用户、删除账户/用户、查找账户/用户。</strong></p>
+<p>Crane作业调度系统中有三个用户角色：
+- <strong>系统管理员（Admin）</strong>：可以增删查改任何账户和用户信息
+- <strong>账户管理员（Operator）</strong>：可以修改部分该账户信息及账户下用户信息
+- <strong>普通用户(None)</strong>： 仅可以查看部分信息，不可以修改所有用户和账户信息</p>
+<h2 id="1">1. 添加账户</h2>
+<pre><code class="language-bash">cacctmgr add account -name=China -describe=motherland  -partition=[CPU,GPU,UU] -Qos=normal
+</code></pre>
+<h3 id="_1">主要参数</h3>
+<ul>
+<li><strong>Qos</strong>： 服务质量</li>
+<li><strong>describe</strong>： 账户描述信息</li>
+<li><strong>name</strong>： 账户名</li>
+<li><strong>parent</strong>： 父账户</li>
+<li><strong>partition</strong>： 可使用的分区名</li>
+</ul>
+<h2 id="2">2. 添加用户</h2>
+<p>系统管理员可以添加任意账户的用户，
+账号管理员可以添加同一账号下的新用户。</p>
+<pre><code class="language-bash">cacctmgr add user –name=xiaoming -account=China -level=admin
+</code></pre>
+<h3 id="_2">主要参数</h3>
+<ul>
+<li><strong>account</strong>： 账户名</li>
+<li><strong>level</strong>： 用户权限</li>
+<li><strong>Admin</strong>： 系统管理员</li>
+<li><strong>Operator</strong>： 账户管理员</li>
+<li><strong>None</strong>： 普通用户</li>
+<li><strong>name</strong>： 用户名</li>
+<li><strong>partition</strong>： 可使用的分区名</li>
+</ul>
+<h2 id="3">3. 删除用户</h2>
+<p>系统管理员可以删除任意账户下的用户，
+账户管理员可以删除同一账户下的新用户。</p>
+<pre><code class="language-bash">cacctmgr delete user xiaohong
+</code></pre>
+<h2 id="4">4. 删除账户</h2>
+<p>仅系统管理员可以删除账户</p>
+<pre><code class="language-bash">cacctmgr delete account TEST
+</code></pre>
+<h2 id="5">5. 查找用户</h2>
+<p>所有用户均可以使用查询功能</p>
+<pre><code class="language-bash">cacctmgr find user xiaohong
+</code></pre>
+<h2 id="6">6. 查找账户</h2>
+<pre><code class="language-bash">cacctmgr cacctmgr find account TEST
+</code></pre>
+<h2 id="7">7. 修改账户</h2>
+<p>系统管理员可以修改任意信息，
+账户管理员可以修改本身账户的信息，但不能更改账户的父账户。</p>
+<pre><code class="language-bash">cacctmgr add account -name=China -describe=motherland 
+</code></pre>
+<h3 id="_3">主要参数</h3>
+<ul>
+<li><strong>Qos</strong>： 服务质量</li>
+<li><strong>describe</strong>： 账户描述信息</li>
+<li><strong>name</strong>： 账户名</li>
+<li><strong>parent</strong>： 父账户</li>
+<li><strong>partition</strong>： 可使用的分区名</li>
+<li><strong>type</strong>： 对账户运行的分区操作</li>
+<li><strong>add</strong>： 默认是添加操作</li>
+<li><strong>delete</strong>: 删除</li>
+<li><strong>overwrite</strong>： 覆盖</li>
+</ul>
+<h2 id="8">8. 修改用户</h2>
+<p>系统管理员可以修改任意信息，
+账户管理员可以修改同账户下用户的信息，但不能更改用户的账户。</p>
+<pre><code class="language-bash">cacctmgr set user -name=xiaoming -L=admin
+</code></pre>
+<h3 id="_4">主要参数</h3>
+<ul>
+<li><strong>account</strong>： 账户名</li>
+<li><strong>level</strong>： 用户权限</li>
+<li><strong>Admin</strong>： 系统管理员</li>
+<li><strong>Operator</strong>： 账户管理员</li>
+<li><strong>None</strong>： 普通用户</li>
+<li><strong>name</strong>： 用户名</li>
+<li><strong>partition</strong>： 可使用的分区名</li>
+</ul>
+<h2 id="9">9. 显示账户树</h2>
+<p>系统管理员会显示数据库所有根账户的账户树，
+账户管理员和用户会显示本身账户的账户树。</p>
+<pre><code class="language-bash">cacctmgr show accounts
+</code></pre>
+<h2 id="10">10. 显示用户</h2>
+<p>系统管理员会显示所有用户，
+账户管理员和用户会显示同一账户下的所有用户。</p>
+<pre><code class="language-bash">cacctmgr show users
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="欢迎使用 CraneSched 文档"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../cbatch/" class="btn btn-neutral float-right" title="cbatch 提交批处理作业">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../cbatch/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

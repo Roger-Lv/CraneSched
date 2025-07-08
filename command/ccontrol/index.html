@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>ccontrol 查看分区和节点状态 - CraneSched</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ccontrol \u67e5\u770b\u5206\u533a\u548c\u8282\u70b9\u72b6\u6001";
+        var mkdocs_page_input_path = "command/ccontrol.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> CraneSched
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">欢迎使用 CraneSched 文档</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../cacctmgr/">cacctmgr 管理用户/账户信息</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cbatch/">cbatch 提交批处理作业</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ccancel/">ccancel 取消作业</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">ccontrol 查看分区和节点状态</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1">1. 查看分区状态</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">主要输出项</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2">2. 查看节点状态</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">主要输出项</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cinfo/">cinfo 查看节点与分区状态</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../cqueue/">cqueue 查看作业队列</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Config</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../config/Centos7Configuration/">centos7 Crane环境配置</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CraneSched</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Command</li>
+      <li class="breadcrumb-item active">ccontrol 查看分区和节点状态</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ccontrol">ccontrol 查看分区和节点状态</h1>
+<p><strong>ccontrol可以查看分区和节点的状态。</strong></p>
+<h3 id="1">1. 查看分区状态</h3>
+<pre><code class="language-bash">ccontrol show partition
+</code></pre>
+<p><strong>ccontrol show partition运行结果展示</strong></p>
+<p><img alt="ccontrol" src="../../images/ccontrol_partition.png" /></p>
+<h4 id="_1">主要输出项</h4>
+<ul>
+<li><strong>PartitionName</strong>：分区名</li>
+<li><strong>State</strong>：分区状态</li>
+<li><strong>TotalNodes</strong>：分区节点数目</li>
+<li><strong>AliveNodes</strong>：分区中可运行的节点数目</li>
+<li><strong>TotalCpus</strong>：分区中所有节点总CPU数目</li>
+<li><strong>AvailCpus</strong>：分区中所有可以使用的CPU数目</li>
+<li><strong>AllocCpus</strong>：分区中已经被分配的CPU数目</li>
+<li><strong>FreeCpus</strong>：分区中空闲的CPU数目</li>
+<li><strong>TotalMem</strong>：分区节点的总内存</li>
+<li><strong>AvailMem</strong>：分区中当前可以使用的内存大小</li>
+<li><strong>AllocMem</strong>：分区中已分配的内存大小</li>
+<li><strong>FreeMem</strong>：分区中空闲的内存大小</li>
+<li><strong>HostList</strong>：分区中所有节点的节点名列表</li>
+</ul>
+<h3 id="2">2. 查看节点状态</h3>
+<pre><code class="language-bash">ccontrol show node
+</code></pre>
+<p><strong>ccontrol show node运行结果展示</strong></p>
+<p><img alt="ccontrol" src="../../images/ccontrol_node.png" /></p>
+<h4 id="_2">主要输出项</h4>
+<ul>
+<li><strong>NodeName</strong>：节点名</li>
+<li><strong>State</strong>：节点状态</li>
+<li><strong>IDLE</strong>： 节点空闲，可使用</li>
+<li><strong>DOWN</strong>： 节点宕机，不可用</li>
+<li><strong>CPUs</strong>：节点CPU数目</li>
+<li><strong>AllocCpus</strong>：节点已分配的CPU数目</li>
+<li><strong>FreeCpus</strong>：节点空闲的CPU数目</li>
+<li><strong>RealMemory</strong>：节点的实际内存大小</li>
+<li><strong>AllocMem</strong>：节点已经分配的内存大小</li>
+<li><strong>FreeMem</strong>：节点空闲的内存大小</li>
+<li><strong>Patition</strong>：节点所属分区</li>
+<li><strong>RunningTask</strong>：节点上正在运行的作业数量</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ccancel/" class="btn btn-neutral float-left" title="ccancel 取消作业"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../cinfo/" class="btn btn-neutral float-right" title="cinfo 查看节点与分区状态">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ccancel/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../cinfo/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
